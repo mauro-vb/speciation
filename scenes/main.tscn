@@ -1,0 +1,120 @@
+[gd_scene load_steps=24 format=3 uid="uid://ruijq8nitklv"]
+
+[ext_resource type="Script" uid="uid://xlovnw53fy0f" path="res://scripts/swipe_detection_area.gd" id="1_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://wkc4xnxmufev" path="res://assets/pixel.png" id="1_tefeu"]
+[ext_resource type="Shader" uid="uid://bevrxwh71a3yl" path="res://canvas_group_black_replacement.gdshader" id="1_tipki"]
+[ext_resource type="Script" uid="uid://wqtdyp5vrdv5" path="res://scripts/canvas_group.gd" id="2_85g3d"]
+[ext_resource type="Script" uid="uid://bwiuh0ugjo8mn" path="res://scripts/bodypart_sprite.gd" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://ct0jqfafutuh" path="res://assets/heads/Head5.png" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://e81smgt3ll2i" path="res://assets/torsos/Torso2.png" id="5_85g3d"]
+[ext_resource type="Texture2D" uid="uid://c3quha25xy1bf" path="res://assets/legs/Legs2.png" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dtrwf4njrsj03" path="res://scenes/sfx.tscn" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://c1a1685cgppu3" path="res://assets/ui/settings.png" id="10_choun"]
+[ext_resource type="Script" uid="uid://ycj71t7l62br" path="res://scripts/settings_button.gd" id="11_ya4ey"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_85g3d"]
+shader = ExtResource("1_tipki")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/background_color = Color(1, 1, 1, 1)
+shader_parameter/threshold = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ya4ey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eb6dy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trceg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8y0u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkv2x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbj1t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_muem4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dp3eg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ld40"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqmmt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yc10j"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_85g3d")
+script = ExtResource("2_85g3d")
+
+[node name="BackGround" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(359.75, 639.75)
+scale = Vector2(720.5, 1280.5)
+texture = ExtResource("1_tefeu")
+
+[node name="TorsoArea" type="Area2D" parent="CanvasGroup" node_paths=PackedStringArray("node_to_swipe")]
+position = Vector2(360, 596)
+script = ExtResource("1_tbgi4")
+body_part = 1
+node_to_swipe = NodePath("Torso")
+metadata/_custom_type_script = "uid://xlovnw53fy0f"
+
+[node name="Torso" type="Sprite2D" parent="CanvasGroup/TorsoArea"]
+position = Vector2(0, 100.5)
+texture = ExtResource("5_85g3d")
+region_enabled = true
+region_rect = Rect2(0, 80, 720, 350)
+script = ExtResource("2_sugp2")
+body_part = 1
+metadata/_custom_type_script = "uid://bwiuh0ugjo8mn"
+
+[node name="LegsArea" type="Area2D" parent="CanvasGroup" node_paths=PackedStringArray("node_to_swipe")]
+position = Vector2(360, 944)
+script = ExtResource("1_tbgi4")
+body_part = 2
+node_to_swipe = NodePath("Legs")
+metadata/_custom_type_script = "uid://xlovnw53fy0f"
+
+[node name="Legs" type="Sprite2D" parent="CanvasGroup/LegsArea"]
+position = Vector2(0, 100.5)
+texture = ExtResource("5_tefeu")
+region_enabled = true
+region_rect = Rect2(0, 82, 720, 345)
+script = ExtResource("2_sugp2")
+body_part = 2
+metadata/_custom_type_script = "uid://bwiuh0ugjo8mn"
+
+[node name="HeadArea" type="Area2D" parent="CanvasGroup" node_paths=PackedStringArray("node_to_swipe")]
+position = Vector2(360, 264)
+script = ExtResource("1_tbgi4")
+node_to_swipe = NodePath("Head")
+metadata/_custom_type_script = "uid://xlovnw53fy0f"
+
+[node name="Head" type="Sprite2D" parent="CanvasGroup/HeadArea"]
+position = Vector2(0, 100.5)
+texture = ExtResource("3_tbgi4")
+region_enabled = true
+region_rect = Rect2(0, 98, 720, 313)
+script = ExtResource("2_sugp2")
+metadata/_custom_type_script = "uid://bwiuh0ugjo8mn"
+
+[node name="SFX" parent="CanvasGroup" instance=ExtResource("7_o6xl0")]
+
+[node name="SettingsButton" type="Button" parent="CanvasGroup"]
+offset_left = 552.0
+offset_top = 24.0
+offset_right = 664.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ya4ey")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_eb6dy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_trceg")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_a8y0u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_jkv2x")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jbj1t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_muem4")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_dp3eg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0ld40")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_gqmmt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
+icon = ExtResource("10_choun")
+script = ExtResource("11_ya4ey")

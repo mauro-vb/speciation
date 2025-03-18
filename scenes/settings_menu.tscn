@@ -1,0 +1,176 @@
+[gd_scene load_steps=44 format=3 uid="uid://dqy4aix3i6l20"]
+
+[ext_resource type="Texture2D" uid="uid://wkc4xnxmufev" path="res://assets/pixel.png" id="1_05p07"]
+[ext_resource type="Shader" uid="uid://bevrxwh71a3yl" path="res://canvas_group_black_replacement.gdshader" id="1_cr101"]
+[ext_resource type="Script" uid="uid://dh8wchkr6uut1" path="res://scripts/settings_menu.gd" id="1_n35ux"]
+[ext_resource type="Script" uid="uid://wqtdyp5vrdv5" path="res://scripts/canvas_group.gd" id="3_48ojb"]
+[ext_resource type="Texture2D" uid="uid://cmp37vjbgvlfx" path="res://assets/ui/sound_button_off.png" id="3_wswnh"]
+[ext_resource type="AudioStream" uid="uid://ctk0hd820gxlp" path="res://assets/sfx/select.wav" id="5_lwwgp"]
+[ext_resource type="Texture2D" uid="uid://cs23k7yyco2sf" path="res://assets/ui/ColorButtonBackground.png" id="6_bgjg7"]
+[ext_resource type="Texture2D" uid="uid://km28eaxmyu00" path="res://assets/ui/BackIcon.png" id="6_fb6cq"]
+[ext_resource type="Texture2D" uid="uid://8u6ce8m06rcf" path="res://assets/ui/ColorButton.png" id="7_48ojb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wswnh"]
+shader = ExtResource("1_cr101")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/background_color = Color(0, 1, 0, 1)
+shader_parameter/threshold = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1j7s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51alr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aadi2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xvj3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ba8q1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rockl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mtud4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0vrw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqo53"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wa640"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jaajm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_labj1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwwgp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgjg7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48ojb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n35ux"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb6cq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ctot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrqig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0fy7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jpbdv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wswnh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puhno"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75x6d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0dr5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdgfw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vymnv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2tyyr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wambi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khnq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlw5p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmx0a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojcm3"]
+
+[node name="SettingsMenu" type="Node2D"]
+script = ExtResource("1_n35ux")
+
+[node name="SelectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lwwgp")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_wswnh")
+script = ExtResource("3_48ojb")
+
+[node name="BackGround" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(359.75, 639.75)
+scale = Vector2(720.5, 1280.5)
+texture = ExtResource("1_05p07")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup"]
+offset_left = 80.0
+offset_top = 352.0
+offset_right = 648.0
+offset_bottom = 924.0
+size_flags_horizontal = 0
+theme_override_constants/separation = 144
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasGroup/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 144
+alignment = 1
+
+[node name="BackButton" type="Button" parent="CanvasGroup/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y1j7s")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_51alr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_aadi2")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0xvj3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ba8q1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_rockl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mtud4")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_s0vrw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jqo53")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_wa640")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jaajm")
+icon = ExtResource("6_fb6cq")
+
+[node name="SoundButton" type="Button" parent="CanvasGroup/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_labj1")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_lwwgp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bgjg7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_48ojb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_fb6cq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2ctot")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jrqig")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0fy7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wswnh")
+icon = ExtResource("3_wswnh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 144
+alignment = 1
+
+[node name="BackgroundColor" type="Button" parent="CanvasGroup/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_75x6d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x0dr5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_gdgfw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vymnv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_2tyyr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wambi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_khnq6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vlw5p")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_fmx0a")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ojcm3")
+icon = ExtResource("6_bgjg7")
+
+[node name="Color" type="Button" parent="CanvasGroup/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_75x6d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x0dr5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_gdgfw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vymnv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_2tyyr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wambi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_khnq6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vlw5p")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_fmx0a")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ojcm3")
+icon = ExtResource("7_48ojb")

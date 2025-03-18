@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://3qgj3foq4i3m"]
+
+[ext_resource type="Script" uid="uid://v0g7l8e7rcna" path="res://scripts/swipe_logic.gd" id="1_fjedy"]
+
+[node name="SwipeDetector" type="Node2D"]
+script = ExtResource("1_fjedy")
+
+[node name="SwipeTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="DoubleTapTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true

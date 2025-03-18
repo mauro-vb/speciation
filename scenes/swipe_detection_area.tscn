@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu7pmjje358u6"]
+
+[ext_resource type="Script" uid="uid://xlovnw53fy0f" path="res://scripts/swipe_detection_area.gd" id="1_w3wll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwwhr"]
+
+[node name="SwipeDetectionArea" type="Area2D"]
+script = ExtResource("1_w3wll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iwwhr")

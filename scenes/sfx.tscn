@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtrwf4njrsj03"]
+
+[ext_resource type="Script" uid="uid://cpq25qxvvgu52" path="res://scripts/global_sfx.gd" id="1_qyyvk"]
+[ext_resource type="AudioStream" uid="uid://pn2t6k54kof3" path="res://assets/sfx/swipeso.wav" id="2_2haqr"]
+[ext_resource type="AudioStream" uid="uid://drng3e8rpxqb1" path="res://assets/sfx/randomize.wav" id="3_84khp"]
+
+[node name="SFX" type="Node2D"]
+script = ExtResource("1_qyyvk")
+
+[node name="SwipeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2haqr")
+volume_db = -14.0
+
+[node name="RandomizeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_84khp")

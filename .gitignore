@@ -1,0 +1,22 @@
+# Godot 4+ specific ignores
+.godot/
+*.import
+*.godot/imported/
+export.cfg
+export_presets.cfg
+*.uid
+
+
+# OS-specific files
+.DS_Store
+.AppleDouble
+._*
+
+# Build folders
+android/
+iOS/
+build/
+bin/
+
+# Optional: ignore assets ONLY if they're generated
+assets/
